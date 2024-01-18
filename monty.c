@@ -1,6 +1,7 @@
 #include "monty.h"
 
 t_args *coments = NULL;
+
 /**
  * main - Driver code.
  * @argc: command-line argument.
@@ -16,7 +17,7 @@ int main(int argc, char **argv)
 	my_args();
 	find_stream(argv[1]);
 
-	while (getline(&coments->lines, &size, coments->streams)!=-1)
+	while (getline(&coments->lines, &size, coments->streams) != -1)
 	{
 		printf("%s", coments->lines);
 	}

@@ -4,7 +4,7 @@
  * my_args - pointer to s_args structs.
  */
 
-void my_args()
+void my_args(void)
 {
 	coments = malloc(sizeof(t_args));
 	if (coments == NULL)
@@ -17,8 +17,8 @@ void my_args()
 	if (coments->instruct == NULL)
 	{
 		dprintf(2, "Error: malloc failed\n");
-                free(coments);
-                exit(EXIT_FAILURE);
+		free(coments);
+		exit(EXIT_FAILURE);
 	}
 	coments->streams = NULL;
 	coments->lines = NULL;

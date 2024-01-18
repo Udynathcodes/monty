@@ -9,7 +9,7 @@ void string_tok(void)
 
 	copy_line = malloc(sizeof(char) * (strlen(coments->lines + 1)));
 	strcpy(copy_line, coments->line);
-	coments->tokens_num =0;
+	coments->tokens_num = 0;
 	tok = strtok(copy_line, delim);
 	while (tok)
 	{

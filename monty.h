@@ -95,4 +95,10 @@ void tokens_free(void);
 void stream_close(void);
 void string_tok(void);
 void failed_malloc(void);
+int is_num(char *udy);
+void free_top(void);
+void free_nodestack(stack_t *top);
+void coments_freeall(void);
+void remove_stack(void);
+
 #endif /* _MONTY_H_ */

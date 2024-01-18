@@ -10,7 +10,7 @@ void add(stack_t **stack, unsigned int num_line)
 	stack_t *var1, *var2;
 
 	(void) stack;
-	if (coments->stacklength < 2)
+	if (coments->stacklenght < 2)
 	{
 		dprintf(2, "L%d: can't add, stack too short\n",
 				num_line);
@@ -18,12 +18,12 @@ void add(stack_t **stack, unsigned int num_line)
 		exit(EXIT_FAILURE);
 	}
 
-	var1 = topments->top;
+	var1 = coments->top;
 	var2 = var1->next;
 
 	var2->n = var1->n + var2->n;
 	remove_stack();
 
-	coments->stacklength -= 1;
+	coments->stacklenght -= 1;
 }
 

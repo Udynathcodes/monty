@@ -10,7 +10,7 @@ void push(stack_t **stack, unsigned int num_line)
 	if (coments->tokens_num <= 1 || !(is_num(coments->token[1])))
 	{
 		free_coments();
-		dprintf(2, "L%d: usage: push integer\n", line_number);
+		dprintf(2, "L%d: usage: push integer\n", num_line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -33,12 +33,12 @@ void push(stack_t **stack, unsigned int num_line)
 		{
 			stack_t *var = coments->top;
 
-			while (t->next)
-				var = tmp->next;
+			while (var->next)
+				var = var->next;
 			var->next = *stack;
 			(*stack)->prev = var;
 		}
 	}
-	coments->stacklength += 1;
+	coments->stacklenght += 1;
 }
 

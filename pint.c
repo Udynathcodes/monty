@@ -29,13 +29,13 @@ void pop(stack_t **stack, unsigned int num_line)
 	(void) stack;
 	if (coments->top == NULL)
 	{
-		dprintf(2, "L%d: can't pop an empty stack\n", line_number);
+		dprintf(2, "L%d: can't pop an empty stack\n", num_line);
 		coments_freeall();
 		exit(EXIT_FAILURE);
 	}
 
 	remove_stack();
-	coments->stacklength -= 1;
+	coments->stacklenght -= 1;
 }
 
 /**
@@ -48,10 +48,10 @@ void swap(stack_t **stack, unsigned int num_line)
 	stack_t *var1, *var2;
 
 	(void) stack;
-	if (coments->stacklength < 2)
+	if (coments->stacklenght < 2)
 	{
 		dprintf(2, "L%d: can't swap, stack too short\n", num_line);
-		coments_freealls();
+		coments_freeall();
 		exit(EXIT_FAILURE);
 	}
 

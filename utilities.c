@@ -1,6 +1,20 @@
 #include "monty.h"
 
 /**
+ * unknown_instruct - Handles unknown instructions errors.
+ */
+
+void unknown_instruct(void)
+{
+	dprintf(2, "L%d: unknown instruction %s\n",
+			coments->num_line, coments->token[0]);
+	stream_close();
+	tokens_free();
+	free_coments();
+	exit(EXIT_FAILURE);
+}
+
+/**
  * utilities - get instructions base on tokens.
  */
 
@@ -12,9 +26,7 @@ void utilities(void)
 		{"pint", &pint}, {"swap", &swap},
 		{"nop", &nop}, {"add", &add},
 		{"pall", &pall}, {"sub", &sub},
-		{"div", &div}, {"mul", &mul},
 		{"rotl", &rotl}, {"rotr", &rotr},
-		{"stack", &stack}, {"queuq", &queue},
 		{"pstr", &pstr}, {"pchar", &pchar},
 		{"mod", &mod},
 		{NULL, NULL}
@@ -28,23 +40,10 @@ void utilities(void)
 		{
 			coments->instruct->opcode = instruct[u].opcode;
 			coments->instruct->f = instruct[u].f;
+			return;
 		}
 	}
 	unknown_instruct();
-}
-
-/**
- * unknown_instruct - Handles unknown instructions errors.
- */
-
-void unknown_instruct(void)
-{
-	dprintf(2, "L%d: unknown instruction %s\n",
-			coments->num_line, coments->token[0]);
-	stream_close();
-	tokens_free();
-	free_coments();
-	exit(EXIT_FAILURE);
 }
 
 /**

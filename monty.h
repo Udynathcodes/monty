@@ -25,6 +25,20 @@ typedef struct stack_s
 } stack_t;
 
 /**
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
+ *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO
+ */
+typedef struct instruction_s
+{
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number);
+} instruction_t;
+
+/**
  * struct s_args - variable holder.
  * @streams: file connector.
  * @num_line: for tracking current line number
@@ -59,29 +73,11 @@ void swap(stack_t **stack, unsigned int num_line);
 void add(stack_t **stack, unsigned int num_line);
 void nop(stack_t **stack, unsigned int num_line);
 void sub(stack_t **stack, unsigned int num_line);
-void _div(stack_t **stack, unsigned int num_line);
-void mul(stack_t **stack, unsigned int num_line);
 void mod(stack_t **stack, unsigned int num_line);
 void pchar(stack_t **stack, unsigned int num_line);
 void pstr(stack_t **stack, unsigned int num_line);
 void rotl(stack_t **stack, unsigned int num_line);
 void rotr(stack_t **stack, unsigned int num_line);
-void stack(stack_t **stack, unsigned int num_line);
-void queue(stack_t **stack, unsigned int num_line);
-
-/**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
- *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO
- */
-typedef struct instruction_s
-{
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
-} instruction_t;
 
 	/* functions prototypes */
 void valid_comment(int argc);

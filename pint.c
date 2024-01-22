@@ -65,4 +65,3 @@ void swap(stack_t **stack, unsigned int num_line)
 	var2->prev = NULL;
 	coments->top = var2;
 }
-

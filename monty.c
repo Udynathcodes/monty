@@ -13,14 +13,25 @@ int main(int argc, char **argv)
 {
 	size_t size = 0;
 
-	valid_comment(argc);
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		return (EXIT_FAILURE);
+	}
 	my_args();
 	find_stream(argv[1]);
 
 	while (getline(&coments->lines, &size, coments->streams) != -1)
 	{
-		printf("%s", coments->lines);
+		coments->num_line += 1;
+		string_tok();
+		utilities();
+		loop_instruct();
+		tokens_free();
 	}
+
+	stream_close();
+	free_coments();
 
 	return (0);
 }

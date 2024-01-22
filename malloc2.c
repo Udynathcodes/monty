@@ -9,14 +9,14 @@ void my_args(void)
 	coments = malloc(sizeof(t_args));
 	if (coments == NULL)
 	{
-		dprintf(2, "Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(coments);
 		exit(EXIT_FAILURE);
 	}
 	coments->instruct = malloc(sizeof(instruction_t));
 	if (coments->instruct == NULL)
 	{
-		dprintf(2, "Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(coments);
 		exit(EXIT_FAILURE);
 	}
@@ -38,7 +38,7 @@ void find_stream(char *file_name)
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 	{
-		dprintf(2, "Error: Can't open file %s\n", file_name);
+		fprintf(stderr, "Error: Can't open file %s\n", file_name);
 		free(coments);
 		exit(EXIT_FAILURE);
 	}
@@ -46,7 +46,7 @@ void find_stream(char *file_name)
 	if (coments->streams == NULL)
 	{
 		close(fd);
-		dprintf(2, "Error: Can't open file %s\n", file_name);
+		fprintf(stderr, "Error: Can't open file %s\n", file_name);
 		free(coments);
 		exit(EXIT_FAILURE);
 	}

@@ -13,7 +13,7 @@ void sub(stack_t **stack, unsigned int num_line)
 	(void) stack;
 	if (coments->stacklenght < 2)
 	{
-		dprintf(2, "L%d: can't sub, stack too short\n", num_line);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", num_line);
 		coments_freeall();
 		exit(EXIT_FAILURE);
 	}

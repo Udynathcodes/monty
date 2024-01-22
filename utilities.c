@@ -6,7 +6,7 @@
 
 void unknown_instruct(void)
 {
-	dprintf(2, "L%d: unknown instruction %s\n",
+	fprintf(stderr, "L%d: unknown instruction %s\n",
 			coments->num_line, coments->token[0]);
 	stream_close();
 	tokens_free();

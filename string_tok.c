@@ -25,7 +25,7 @@ void string_tok(void)
 		coments->token[u] = malloc(sizeof(char) * (strlen(tok) + 1));
 		if (coments->token[u] == NULL)
 		{
-			dprintf(2, "Error: malloc failed\n");
+			fprintf(stderr, "Error: malloc failed\n");
 			free(coments);
 			exit(EXIT_FAILURE);
 		}

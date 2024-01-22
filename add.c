@@ -12,7 +12,7 @@ void add(stack_t **stack, unsigned int num_line)
 	(void) stack;
 	if (coments->stacklenght < 2)
 	{
-		dprintf(2, "L%d: can't add, stack too short\n",
+		fprintf(stderr, "L%d: can't add, stack too short\n",
 				num_line);
 		coments_freeall();
 		exit(EXIT_FAILURE);
@@ -26,4 +26,3 @@ void add(stack_t **stack, unsigned int num_line)
 
 	coments->stacklenght -= 1;
 }
-

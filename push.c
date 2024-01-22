@@ -10,7 +10,7 @@ void push(stack_t **stack, unsigned int num_line)
 	if (coments->tokens_num <= 1 || !(is_num(coments->token[1])))
 	{
 		free_coments();
-		dprintf(2, "L%d: usage: push integer\n", num_line);
+		fprintf(stderr, "L%d: usage: push integer\n", num_line);
 		exit(EXIT_FAILURE);
 	}
 

@@ -13,7 +13,7 @@ void mod(stack_t **stack, unsigned int num_line)
 	(void) stack;
 	if (coments->stacklenght < 2)
 	{
-		dprintf(2, "L%d: can't mod, stack too short\n", num_line);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", num_line);
 		coments_freeall();
 		exit(EXIT_FAILURE);
 	}
@@ -23,7 +23,7 @@ void mod(stack_t **stack, unsigned int num_line)
 
 	if (var1->n == 0)
 	{
-		dprintf(2, "L%d: division by zero\n", num_line);
+		fprintf(stderr, "L%d: division by zero\n", num_line);
 		coments_freeall();
 		exit(EXIT_FAILURE);
 	}

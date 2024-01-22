@@ -12,7 +12,7 @@ void pchar(stack_t **stack, unsigned int num_line)
 	(void) stack;
 	if (coments->top == NULL)
 	{
-		dprintf(2, "L%d: can't pchar, stack empty\n", num_line);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", num_line);
 		coments_freeall();
 		exit(EXIT_FAILURE);
 	}
@@ -21,7 +21,7 @@ void pchar(stack_t **stack, unsigned int num_line)
 
 	if (var1->n < 0 || var1->n > 127)
 	{
-		dprintf(2, "L%d: can't pchar, value out of range\n", num_line);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", num_line);
 		coments_freeall();
 		exit(EXIT_FAILURE);
 	}

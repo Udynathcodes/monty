@@ -80,7 +80,6 @@ void rotl(stack_t **stack, unsigned int num_line);
 void rotr(stack_t **stack, unsigned int num_line);
 
 	/* functions prototypes */
-void valid_comment(int argc);
 void find_stream(char *file_name);
 void my_args(void);
 void utilities(void);
